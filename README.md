@@ -13,7 +13,9 @@ Solution of YaProfi task3
 | POST | /promo/{id}/prize | ID промоакции, в которую добавляется приз, передается как path-параметр: например: **/promo/1/prize**<br><br>В запросе передается body с информацией о добавляемом призе в формате JSON:<br><br>{  <br>  “description”: “string”  <br>}<br><br>В ответе ожидается идентификатор добавленного приза, например: **321** | Добавление приза в промоакцию по идентификатору промоакции |
 | DELETE | /promo/{promoId}/prize/{prizeId} | ID редактируемой промоакции и ID удаляемого приза передаются как path-параметры, например:<br><br>**/promo/1/participant/1337** | Удаление приза из промоакции по идентификаторам промоакции и приза |
 | POST | /promo/{id}/raffle | ID промоакции передается в виде path-параметра, например: <br><br>**/promo/1/raffle**<br><br>В ответе ожидается список объектов типа “Результат проведения розыгрыша” в формате JSON: <br><br>\[  <br>  {  <br>    “winner”: {  <br>      “id”: number,  <br>      “name”: “string”  <br>    },  <br>    “prize”: {  <br>      “id”: number,  <br>      “description”: “string”  <br>    }  <br>  },  <br>  …  <br>\]<br><br>В случае, если проведение розыгрыша в данный момент невозможно – следует вернуть код ответа 409 (Conflict) | Проведение розыгрыша призов в промоакции по идентификатору промоакции<br><br>Проведение розыгрыша возможно только в том случае, когда количество участников и призов в промоакции совпадает (т.е., например, если в промоакции в текущий момент 2 участника и 2 приза или 3 участника и 3 приза и т.д.) |
+
 Соответствующие методы описаны в следующих функциях:
-create_promo | send_promos | send_promo | change_promo | delete_promo | add_participant | delete_participant | add_prize | delete_prize | raffle 
+
+create_promo send_promos  send_promo  change_promo delete_promo  add_participant  delete_participant  add_prize delete_prize  raffle 
 
 Сервер достпен по адресу http://127.0.0.1:8080/
