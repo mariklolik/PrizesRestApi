@@ -18,4 +18,4 @@ Solution of YaProfi task3
 
 create_promo send_promos  send_promo  change_promo delete_promo  add_participant  delete_participant  add_prize delete_prize  raffle 
 
-Сервер достпен по адресу http://127.0.0.1:8080/
+Сервер доступен по адресу http://127.0.0.1:8080/
